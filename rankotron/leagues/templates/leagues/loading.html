@@ -1,0 +1,22 @@
+Hang on, we're loading up the data! This might take a bit...
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<script type="text/javascript"> 
+function pollReady(){
+    console.log("tick");
+    $.get('ready', function(resp, status){
+        console.log("tock");
+        console.log(typeof resp);
+        var response = JSON.parse(resp);
+        console.log(response);
+        if (response.fetchStatus === true){
+            console.log("success!");
+        }
+        else{
+            console.log("still working");
+            setTimeout(pollReady, 1000);
+        }
+    });
+}
+pollReady();
+</script>

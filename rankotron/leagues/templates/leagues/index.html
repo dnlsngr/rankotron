@@ -1,0 +1,6 @@
+<label>Please enter your team's URL</label>
+<form action="/leagues/start" method="post">
+{% csrf_token %}
+	<input name="teamURL" id="teamURLEntry">
+<input type="submit" value="Start!" />
+</form>

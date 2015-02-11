@@ -1,0 +1,27 @@
+{% extends "base_rankotron.html" %}
+
+{% block content %}
+
+<table class="tablesorter">
+<thead>
+<tr>
+	<th>Team</th>
+	<th>Total Points</th>
+	<th>Expected Head-to-head Wins</th>
+</tr>
+</thead>
+<tbody>
+{% for team in teams %}
+<tr>
+   <td class="teamname">{{team.name}}</td>
+   <td class="analytic">{{team.totalPoints}}</td>
+   <td class="analytic">{{team.exH2HWins}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+{{outputBlock|safe}}
+
+{% endblock %}
+

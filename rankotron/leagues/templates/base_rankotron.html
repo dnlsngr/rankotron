@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="ds_rankotron/assets/main.css" />
+	
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://tablesorter.com/__jquery.tablesorter.min.js"></script>
+	
+	<script type="text/javascript" id="js">$(document).ready(function()
+		{
+			$("table").tablesorter({ 
+        	// sort on the first column and third column, order asc 
+        	sortList: [[2,1]] 
+    });	
+		}
+	);</script>
+	
+	<title>The Rank-o-tron</title>
+</head>
+<body>
+	<a href="/start" class="main-title">"The Rank-o-tron"</a>
+	<br><br><br><br>
+	
+	<div id="content">
+	{% block content %}
+	{% endblock %}
+	</div>
+
+</body>
+</html>

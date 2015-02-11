@@ -1,0 +1,42 @@
+Player -> S name, S position(s) #position here is nominal
+
+WeekStats -> Player player, D points
+
+Position ->  S position, [WeekStats] stats
+
+Team -> [Position] positions, S name, I id
+
+Parse page: know team id#, need team name
+Display rankings: always go by team id
+
+Weekly rankings:
+for a given week:
+	get totals for each team
+	teamWeeklyPoints: [WK1, WK2, WK3]
+	WK1: [(team A, 150), (team B, 120)]
+	
+	find max and min, get normalized values
+	add normalized values to running totals
+	
+	
+	
+UX:
+Stats package:
+-Total points
+-ExWins
+-What-if replacement
+
+Select stats package via dropdown
+Full breakdown in separate tab?
+Button to output data as csv
+
+
+Todo for django:
+if !getTeamFromDb
+   create new league
+update league using parseWeekRange
+
+-make team_map into a django db object
+--understand how to populate an entire league object
+--adjust adding things to make them match
+-make URLParser stateful, construct it once at the beginning
